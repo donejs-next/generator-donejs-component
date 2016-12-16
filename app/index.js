@@ -157,7 +157,44 @@ module.exports = generators.Base.extend({
     }
 
     if(!this.options.packages) {
-      throw new Error('No DoneJS dependency package list provided!');
+      this.options.packages = {
+	"dependencies": {
+          "can-component": "^3.0.4",
+          "can-connect": "^0.6.0-pre.4",
+          "can-define": "^1.0.7",
+          "can-map-define": "^3.0.2",
+          "can-route": "^3.0.0-pre.5",
+          "can-route-pushstate": "^3.0.0-pre.3",
+          "can-stache": "^3.0.0-pre.6",
+          "can-vdom": "^3.0.1",
+          "can-view-autorender": "^3.0.0-pre.3",
+          "can-zone": "^0.6.0",
+          "copy-dir": "^0.3.0",
+          "done-autorender": "git+https://github.com/donejs-next/done-autorender.git",
+          "done-component": "git+https://github.com/donejs-next/done-component.git",
+          "done-css": ">=2.1.0-pre.0",
+          "done-serve": "git+https://github.com/donejs-next/done-serve.git",
+          "done-ssr": "git+https://github.com/donejs-next/done-ssr.git",
+          "done-ssr-middleware": "git+https://github.com/donejs-next/done-ssr-middleware.git",
+          "request": "^2.79.0",
+          "spawn-mochas": "git+https://github.com/donejs-next/spawn-mochas.git",
+          "steal": ">=1.0.0-rc2",
+          "steal-less": "^1.0.1",
+          "steal-stache": "git+https://github.com/canjs/steal-stache.git",
+          "steal-tools": ">=1.0.0-rc2",
+          "testdouble": "^1.10.0"
+        },
+        "devDependencies": {
+          "can-fixture": ">=0.4.0-pre.2",
+          "documentjs": "^0.4.2",
+          "donejs-cli": "^0.10.0-pre.0",
+          "donejs-deploy": "^0.4.0",
+          "funcunit": "~3.0.0",
+          "steal-qunit": "^0.1.1",
+          "testee": "^0.2.4"
+        }
+      }
+      //throw new Error('No DoneJS dependency package list provided!');
     }
 
     this.log('Writing package.json v' + this.options.version);
